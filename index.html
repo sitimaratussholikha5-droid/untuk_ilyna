@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Untuk Ilyna ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET & MOBILE BASE
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:'Poppins',sans-serif;
+  color:#f1f5f9;
+
+  /* GRADASI COOL CYBER BLUE, PURPLE & DARK NAVY */
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.35) 0%, transparent 50%),
+    linear-gradient(135deg, #0b132b 0%, #1c2541 50%, #0f172a 100%);
+  background-attachment:fixed;
+}
+
+
+/* =========================
+   GLITTER & SPARKLE CONTAINER
+========================= */
+
+.glitter-container{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
+
+.glitter{
+  position:absolute;
+  color:#38bdf8;
+  opacity:0;
+  text-shadow: 0 0 8px #38bdf8, 0 0 16px #a855f7;
+  animation: glitterTwinkle 2.5s ease-in-out infinite;
+}
+
+@keyframes glitterTwinkle{
+  0%,100%{ opacity:0; transform: scale(.2) rotate(0deg); }
+  30%{ opacity:.35; }
+  50%{ opacity:0.9; transform: scale(1.3) rotate(90deg); }
+  70%{ opacity:.4; }
+}
+
+
+/* =========================
+   OPENING SECTION
+========================= */
+
+.opening{
+  position:relative;
+  z-index:2;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:16px;
+}
+
+.open-card{
+  width:100%;
+  max-width:400px;
+  padding:38px 22px;
+  text-align:center;
+  border-radius:24px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.2);
+  animation:cardFloat 4s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-6px); }
+}
+
+.small-text{
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:600;
+  color:#38bdf8;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.ilyna{
+  font-family:'Caveat', cursive;
+  font-size:64px;
+  font-weight:700;
+  line-height:1;
+  background: linear-gradient(90deg, #38bdf8, #a855f7, #34d399, #fcd34d, #38bdf8);
+  background-size:300% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:ilynaGradient 4s linear infinite;
+  filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.5));
+}
+
+@keyframes ilynaGradient{
+  to{ background-position:300% center; }
+}
+
+.open-desc{
+  font-size:12px;
+  line-height:1.8;
+  color:#cbd5e1;
+  margin:18px auto 24px;
+}
+
+.open-btn{
+  position:relative;
+  overflow:hidden;
+  border:none;
+  padding:13px 30px;
+  border-radius:30px;
+  color:white;
+  font-family:'Poppins',sans-serif;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.5px;
+  background: linear-gradient(135deg, #38bdf8 0%, #a855f7 50%, #6366f1 100%);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+  cursor:pointer;
+  transition:.25s;
+}
+
+.open-btn:active{
+  transform:scale(0.95);
+}
+
+
+/* =========================
+   MAIN SECTION
+========================= */
+
+#main{
+  display:none;
+  position:relative;
+  z-index:1;
+  padding:30px 14px 60px;
+}
+
+.container{
+  width:100%;
+  max-width:450px;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:6px;
+}
+
+.title h1{
+  font-size:26px;
+  font-weight:700;
+  background: linear-gradient(90deg, #38bdf8, #a855f7, #34d399, #38bdf8);
+  background-size:300% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:ilynaGradient 4s linear infinite;
+}
+
+.subtitle{
+  text-align:center;
+  font-size:12px;
+  color:#94a3b8;
+  margin-bottom:22px;
+}
+
+
+/* =========================
+   PHOTO SLIDER
+========================= */
+
+.slider-wrapper{
+  position:relative;
+  width:100%;
+  display:flex;
+  align-items:center;
+}
+
+.photo-grid{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  scroll-snap-type:x mandatory;
+  padding:15px 5px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+
+.photo-grid::-webkit-scrollbar{ display:none; }
+
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:10;
+  width:36px;
+  height:36px;
+  border:none;
+  border-radius:50%;
+  background:rgba(15, 23, 42, 0.85);
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(56, 189, 248, 0.3);
+  color:#38bdf8;
+  font-size:18px;
+  font-weight:bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.slide-btn.prev{ left:-6px; }
+.slide-btn.next{ right:-6px; }
+
+.photo{
+  flex:0 0 185px;
+  scroll-snap-align:center;
+  position:relative;
+  padding:8px 8px 16px;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border:1px solid rgba(56, 189, 248, 0.25);
+  border-radius:12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transform: rotate(var(--rotate));
+  transition: transform .3s ease;
+}
+
+.photo:active{
+  transform: scale(0.96) rotate(0deg);
+}
+
+.photo img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:8px;
+  display:block;
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.caption{
+  margin-top:10px;
+  text-align:center;
+  font-family:'Caveat', cursive;
+  font-size:18px;
+  font-weight:700;
+  color:#f1f5f9;
+}
+
+
+/* =========================
+   VIDEO SECTION
+========================= */
+
+.video-section{
+  width:100%;
+  margin:30px auto 0;
+  padding:22px 16px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(56, 189, 248, 0.25);
+  border-radius:22px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+  text-align:center;
+}
+
+.video-title{
+  font-family:'Caveat', cursive;
+  font-size:30px;
+  color:#38bdf8;
+  margin-bottom:12px;
+}
+
+.video-wrapper{
+  position:relative;
+  width:100%;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
+  background:#000;
+}
+
+.video-wrapper video{
+  width:100%;
+  height:auto;
+  max-height:380px;
+  display:block;
+  border-radius:16px;
+  object-fit:contain;
+}
+
+.video-sub{
+  font-size:11px;
+  color:#94a3b8;
+  margin-top:10px;
+}
+
+
+/* =========================
+   MESSAGE BOX
+========================= */
+
+.message-box{
+  position:relative;
+  width:100%;
+  margin:30px auto 0;
+  padding:26px 20px;
+  text-align:center;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(56, 189, 248, 0.25);
+  border-radius:22px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+}
+
+.message-box h2{
+  font-family:'Caveat', cursive;
+  font-size:32px;
+  margin-bottom:12px;
+  background: linear-gradient(90deg, #38bdf8, #34d399, #fcd34d);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.message-box p{
+  font-size:12px;
+  line-height:2;
+  color:#cbd5e1;
+}
+
+
+/* =========================
+   INTERACTIVE QUESTION & BUTTONS
+========================= */
+
+.interactive-section{
+  width:100%;
+  margin:30px auto 0;
+  padding:22px 16px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(56, 189, 248, 0.25);
+  border-radius:22px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+  text-align:center;
+}
+
+.quiz-title{
+  font-family:'Caveat', cursive;
+  font-size:30px;
+  color:#38bdf8;
+  margin-bottom:4px;
+}
+
+.quiz-sub{
+  font-size:11px;
+  color:#94a3b8;
+  margin-bottom:18px;
+}
+
+.quiz-card{
+  background:rgba(30, 41, 59, 0.7);
+  border-radius:18px;
+  padding:16px 14px;
+  margin-bottom:16px;
+  border:1px solid rgba(56, 189, 248, 0.2);
+  box-shadow:0 4px 15px rgba(0,0,0,0.25);
+}
+
+.q-label{
+  font-size:12px;
+  font-weight:600;
+  color:#f1f5f9;
+  margin-bottom:12px;
+}
+
+.options-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:8px;
+}
+
+.opt-btn{
+  border:none;
+  padding:11px 10px;
+  border-radius:12px;
+  font-family:'Poppins',sans-serif;
+  font-size:11px;
+  font-weight:500;
+  color:#cbd5e1;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border:1px solid rgba(56, 189, 248, 0.2);
+  box-shadow:0 3px 10px rgba(0,0,0,0.3);
+  cursor:pointer;
+  transition:all 0.2s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.opt-btn:active{
+  transform:scale(0.95);
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  color:white;
+  border-color:transparent;
+}
+
+.quiz-response-box{
+  display:none;
+  margin-top:14px;
+  padding:14px;
+  border-radius:14px;
+  background: rgba(11, 19, 43, 0.9);
+  border:1px dashed #38bdf8;
+  font-size:12px;
+  line-height:1.7;
+  color:#f1f5f9;
+  animation:fadeIn 0.35s ease forwards;
+}
+
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(6px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.followup-btn{
+  display:inline-block;
+  margin-top:10px;
+  border:none;
+  padding:8px 18px;
+  border-radius:20px;
+  font-family:'Poppins',sans-serif;
+  font-size:11px;
+  font-weight:600;
+  color:#ffffff;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+  cursor:pointer;
+  transition:transform 0.2s;
+}
+
+.followup-btn:active{
+  transform:scale(0.93);
+}
+
+
+/* =========================
+   SURPRISE ENVELOPE
+========================= */
+
+.surprise-section{
+  margin-top:35px;
+  text-align:center;
+}
+
+.surprise-prompt{
+  font-size:12px;
+  font-weight:500;
+  color:#38bdf8;
+  margin-bottom:14px;
+}
+
+.envelope-card{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px 32px;
+  border-radius:20px;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.9));
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  cursor:pointer;
+}
+
+.envelope-card:active{
+  transform:scale(0.95);
+}
+
+.envelope-icon{
+  font-size:38px;
+  margin-bottom:6px;
+}
+
+.envelope-btn-text{
+  font-size:12px;
+  font-weight:600;
+  color:#38bdf8;
+}
+
+
+/* =========================
+   MODAL PESAN RAHASIA
+========================= */
+
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  padding:16px;
+  background:rgba(11, 19, 43, 0.85);
+  backdrop-filter:blur(10px);
+  opacity:0;
+  transition:opacity 0.3s ease;
+}
+
+.modal-overlay.active{
+  display:flex;
+  opacity:1;
+}
+
+.modal-card{
+  position:relative;
+  width:100%;
+  max-width:380px;
+  padding:28px 20px;
+  background:linear-gradient(135deg, #1e293b, #0f172a);
+  border-radius:22px;
+  border:1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  text-align:center;
+  transform:scale(0.85);
+  transition:all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.active .modal-card{
+  transform:scale(1);
+}
+
+.close-modal-btn{
+  position:absolute;
+  top:12px;
+  right:14px;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,0.1);
+  color:#94a3b8;
+  font-size:14px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.modal-title{
+  font-family:'Caveat', cursive;
+  font-size:34px;
+  color:#38bdf8;
+  margin-bottom:10px;
+}
+
+.modal-text{
+  font-size:12px;
+  line-height:1.8;
+  color:#cbd5e1;
+  margin-bottom:20px;
+}
+
+.action-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.action-btn{
+  border:none;
+  padding:11px;
+  border-radius:12px;
+  font-family:'Poppins', sans-serif;
+  font-size:11px;
+  font-weight:600;
+  color:#ffffff;
+  background:linear-gradient(135deg, #38bdf8, #a855f7);
+  box-shadow:0 4px 14px rgba(56, 189, 248, 0.35);
+  cursor:pointer;
+}
+
+.action-btn:active{
+  transform:scale(0.96);
+}
+
+
+/* =========================
+   ENDING
+========================= */
+
+.ending{
+  text-align:center;
+  margin-top:40px;
+}
+
+.ending .ilyna{
+  font-size:48px;
+}
+
+.ending p{
+  margin-top:8px;
+  font-size:12px;
+  line-height:1.8;
+  color:#94a3b8;
+}
+
+.stars{
+  margin-top:16px;
+  font-size:18px;
+  letter-spacing:6px;
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.float-star{
+  position:fixed;
+  z-index:5;
+  pointer-events:none;
+  color:#38bdf8;
+  font-size:14px;
+  text-shadow: 0 0 8px #38bdf8, 0 0 12px #a855f7;
+  animation: floatStar 5s linear forwards;
+}
+
+@keyframes floatStar{
+  0%{ transform: translateY(20px) scale(.3); opacity:0; }
+  20%{ opacity:1; }
+  100%{ transform: translateY(-110vh) scale(.5); opacity:0; }
+}
+
+.burst-particle{
+  position:fixed;
+  z-index:2000;
+  pointer-events:none;
+  font-size:20px;
+  animation:burstFly 2s ease-out forwards;
+}
+
+@keyframes burstFly{
+  0%{ opacity:1; transform:translate(0, 0) scale(0.5); }
+  100%{ opacity:0; transform:translate(var(--dx), var(--dy)) scale(1.4); }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- GLITTER BACKGROUND -->
+<div class="glitter-container" id="glitterContainer"></div>
+
+
+<!-- OPENING SECTION -->
+<section class="opening" id="opening">
+  <div class="open-card">
+    <div class="small-text">✦ Special Reminder ✦</div>
+    <div class="ilyna">Ilyna</div>
+    <p class="open-desc">
+      Cuma mau ngingetin kalau kamu udah berjuang hebat sejauh ini. Tetap tenang, fokus, dan percaya sama prosesmu ya! ✨
+    </p>
+    <button class="open-btn" onclick="openMessage()">Buka Pesan ✨</button>
+  </div>
+</section>
+
+
+<!-- MAIN SECTION -->
+<main id="main">
+  <div class="container">
+
+    <!-- TITLE -->
+    <div class="title">
+      <h1>Semangat, Ilyna! ✨</h1>
+    </div>
+    <p class="subtitle">Jangan biarkan hari ini memadamkan sinarmu.</p>
+
+
+    <!-- PHOTO SLIDER -->
+    <div class="slider-wrapper">
+      <button class="slide-btn prev" onclick="scrollGrid(-1)">‹</button>
+      <div class="photo-grid" id="photoGrid">
+
+        <div class="photo" style="--rotate:-2deg" onclick="photoClick(this)">
+          <img src="iiii.jpeg" alt="Foto 1">
+          <div class="caption">kamu udah sejauh ini ✨</div>
+        </div>
+
+        <div class="photo" style="--rotate:2deg" onclick="photoClick(this)">
+          <img src="uuu.jpeg" alt="Foto 2">
+          <div class="caption">semangat terus, Ilyna 🌸</div>
+        </div>
+
+        <div class="photo" style="--rotate:-2deg" onclick="photoClick(this)">
+          <img src="looo.jpeg" alt="Foto 3">
+          <div class="caption">pelan-pelan asal jalan 🌻</div>
+        </div>
+
+        <div class="photo" style="--rotate:2deg" onclick="photoClick(this)">
+          <img src="ci.jpeg" alt="Foto 4">
+          <div class="caption">kamu lebih kuat dari dugaamu 💫</div>
+        </div>
+
+        <div class="photo" style="--rotate:-2deg" onclick="photoClick(this)">
+          <img src="sha.jpeg" alt="Foto 5">
+          <div class="caption">percaya sama prosesmu 🌿</div>
+        </div>
+
+        <div class="photo" style="--rotate:2deg" onclick="photoClick(this)">
+          <img src="yuhu.jpg" alt="Foto 6">
+          <div class="caption">satu langkah setiap hari ✨</div>
+        </div>
+
+        <div class="photo" style="--rotate:-1deg" onclick="photoClick(this)">
+          <img src="satu.jpeg" alt="Foto 7">
+          <div class="caption">pasti bisa melewatinya! 🔥</div>
+        </div>
+
+        <div class="photo" style="--rotate:-1deg" onclick="photoClick(this)">
+          <img src="dua.jpeg" alt="Foto 8">
+          <div class="caption">Ganbatte 🔥</div>
+        </div>
+
+      </div>
+      <button class="slide-btn next" onclick="scrollGrid(1)">›</button>
+    </div>
+
+
+    <!-- VIDEO SECTION -->
+    <div class="video-section">
+      <h2 class="video-title">Special Video 🎬</h2>
+      <div class="video-wrapper">
+        <video controls poster="tujuh.jpg" preload="metadata">
+          <source src="video,satu.mp4" type="video/mp4">
+          Browser kamu tidak mendukung pemutaran video ini.
+        </video>
+      </div>
+      <p class="video-sub">Klik play buat nonton videonya! ✨</p>
+    </div>
+
+
+    <!-- MESSAGE BOX -->
+    <div class="message-box">
+      <h2>Untuk Ilyna... ✨</h2>
+      <p>
+        Jalan Panjang Bernama Hidup<br><br>
+        Di bawah langit waktu kita melangkah,<br>
+        merangkul tawa, memeluk lelah.<br>
+        Hidup bukan tentang cepat berlari,<br>
+        tapi tentang keteguhan untuk berdiri.<br><br>
+        Setiap luka mengajarkan sabar,<br>
+        di balik gelap pasti ada fajar.<br>
+        Jalani hari dengan tulus dan ikhlas,<br>
+        sebelum kisah kita benar-benar berbatas(kematian).🌟<br><br>
+        <strong>-spl</strong>
+      </p>
+    </div>
+
+
+    <!-- INTERACTIVE QUESTIONS WITH FOLLOW-UP ACTION BUTTONS -->
+    <div class="interactive-section">
+      <h2 class="quiz-title">Cek Kondisi Ilyna 🎯</h2>
+      <p class="quiz-sub">Pilih opsi di bawah buat klaim booster energimu!</p>
+
+      <!-- PERTANYAAN 1 -->
+      <div class="quiz-card">
+        <div class="q-label">1. Gimana kondisi/perasaan Ilyna hari ini? 💭</div>
+        <div class="options-grid">
+          <button class="opt-btn" onclick="answerQuiz(1, 'Agak Capek 😮‍💨', 'Wajar banget, Ilyna. Istirahat sejenak, balik lagi dengan versi lebih fresh! ✨', 'Recharge Energi ✨', '✨')">Capek 😮‍💨</button>
+          <button class="opt-btn" onclick="answerQuiz(1, 'Semangat 🔥', 'Mantap! Ini amunisi energi 1000% khusus buat kamu. Gas terus! 🔥', 'Klaim Amunisi 🔥', '🔥')">Semangat 🔥</button>
+          <button class="opt-btn" onclick="answerQuiz(1, 'Lumayan Aman 👍', 'Good! Pertahankan konsistensimu dan jalani hari dengan tenang! 🎯', 'Jaga Ritme 🎯', '🎯')">Lumayan 👍</button>
+          <button class="opt-btn" onclick="answerQuiz(1, 'On Fire / Top 🚀', 'Aura keren & juaramu kelihatan! Pertahankan ritme, Ilyna! 🚀', 'Klaim Trofi 🏆', '🏆')">On Fire 🚀</button>
+        </div>
+        <div class="quiz-response-box" id="response-q1"></div>
+      </div>
+
+      <!-- PERTANYAAN 2 -->
+      <div class="quiz-card">
+        <div class="q-label">2. Sekarang kamu paling butuh apa? 🎁</div>
+        <div class="options-grid">
+          <button class="opt-btn" onclick="answerQuiz(2, 'Tidur / Rest 😴', 'Rebahan dulu, matikan gadget, dan isi ulang baterai energimu buat besok! 🌙', 'Mode Istirahat 🌙', '🌙')">Tidur 😴</button>
+          <button class="opt-btn" onclick="answerQuiz(2, 'Kopi / Matcha ☕', 'Saatnya rehat sejenak, nikmati minuman/makanan favoritmu dulu! ☕', 'Seruput Drink ☕', '☕')">Drink ☕</button>
+          <button class="opt-btn" onclick="answerQuiz(2, 'Musik / Chill 🎧', 'Putar playlist andalan atau dengerin lagu favorit buat refresh otak! 🎧', 'Play Playlist 🎧', '🎧')">Musik 🎧</button>
+          <button class="opt-btn" onclick="answerQuiz(2, 'Ketenangan 🍃', 'Tarik napas dalam-dalam, lepasin semua beban. You got this, Ilyna! 🍃', 'Tarik Napas 🍃', '🍃')">Chill 🍃</button>
+        </div>
+        <div class="quiz-response-box" id="response-q2"></div>
+      </div>
+
+      <!-- PERTANYAAN 3 -->
+      <div class="quiz-card">
+        <div class="q-label">3. Seberapa keren/hebat Ilyna hari ini? 🌟</div>
+        <div class="options-grid" style="grid-template-columns:1fr;">
+          <button class="opt-btn" onclick="answerQuiz(3, '100% Keren 💯', 'Jelas 100%! Kamu selalu tau cara hadapin rintangan di depanmu. 💯', 'Klaim Mahkota 👑', '👑')">100% Keren 💯</button>
+          <button class="opt-btn" onclick="answerQuiz(3, '1000% Kelas Utama ✨', 'Tepat banget! Perjuangan kamu luar biasa, pantes dapat jempol! ✨', 'Terima Trofi 🏆', '🏆')">1000% Luar Biasa ✨</button>
+          <button class="opt-btn" onclick="answerQuiz(3, 'Tak Terhingga / Top Tier 🌟', 'PERFECT! Kehebatan dan potensimu itu memang tanpa batas! 🌻🌸', 'Klaim Bintang 🌟', '🌟')">Tak Terhingga 🌟</button>
+        </div>
+        <div class="quiz-response-box" id="response-q3"></div>
+      </div>
+
+    </div>
+
+
+    <!-- SURPRISE ENVELOPE -->
+    <div class="surprise-section">
+      <p class="surprise-prompt">Satu hal lagi untukmu, buka pesan ini 📩</p>
+      <div class="envelope-card" onclick="toggleModal(true)">
+        <div class="envelope-icon">✉</div>
+        <div class="envelope-btn-text">Buka Pesan Rahasia ✨</div>
+      </div>
+    </div>
+
+
+    <!-- ENDING -->
+    <div class="ending">
+      <div class="ilyna">Ilyna</div>
+      <p>Tetap tenang & percaya pada dirimu sendiri. 🌿<br>Ingat, kamu sudah berhasil melewati banyak hal hebat!</p>
+      <div class="stars">✨ 🌸 ✨</div>
+    </div>
+
+  </div>
+</main>
+
+
+<!-- MODAL POPUP -->
+<div class="modal-overlay" id="secretModal">
+  <div class="modal-card">
+    <button class="close-modal-btn" onclick="toggleModal(false)">✕</button>
+    <h2 class="modal-title">Pesan Rahasia 🌸</h2>
+    <p class="modal-text">
+      Kalau kamu merasa lelah, coba lihat ke belakang...
+      sudah berapa banyak rintangan yang berhasil kamu lalui sampai hari ini. Kamu hebat banget, Ilyna!<br><br>
+      <strong>-gadis salju</strong>
+    </p>
+    <div class="action-buttons">
+      <button class="action-btn" onclick="triggerParticleBurst(event, '🌟')">Terima Bintang 🌟</button>
+      <button class="action-btn" onclick="triggerParticleBurst(event, '🌻')">Terima Apresiasi 🌻</button>
+      <button class="action-btn" onclick="triggerParticleBurst(event, '✨')">Ambil Energi ✨</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+/* EFEK GLITTER LATAR (BUNGA & BINTANG) */
+function initGlitter(){
+  const container = document.getElementById("glitterContainer");
+  if(!container) return;
+  const items = ["✨", "🌸", "🌻", "💫", "⭐", "🌿"];
+  for(let i=0; i<30; i++){
+    const el = document.createElement("div");
+    el.className = "glitter";
+    el.innerHTML = items[Math.floor(Math.random() * items.length)];
+    el.style.left = Math.random() * 100 + "%";
+    el.style.top = Math.random() * 100 + "%";
+    el.style.fontSize = (Math.random() * 12 + 10) + "px";
+    el.style.animationDelay = (Math.random() * 3) + "s";
+    el.style.animationDuration = (Math.random() * 2 + 2) + "s";
+    container.appendChild(el);
+  }
+}
+window.addEventListener("DOMContentLoaded", initGlitter);
+
+/* BUKA UTAMA */
+function openMessage(){
+  document.getElementById("opening").style.display="none";
+  document.getElementById("main").style.display="block";
+  window.scrollTo({ top:0, behavior:"smooth" });
+  createFloatingStars();
+}
+
+/* GESER SLIDER FOTO */
+function scrollGrid(direction){
+  const grid = document.getElementById("photoGrid");
+  const scrollAmount = grid.clientWidth * 0.8;
+  grid.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+}
+
+/* KLIK FOTO */
+function photoClick(photo){
+  photo.style.transform = "scale(0.95)";
+  setTimeout(() => { photo.style.transform = ""; }, 300);
+}
+
+/* KUIS & BUTTON TINDAKAN BALASAN */
+function answerQuiz(qNum, choiceText, replyText, btnText, emoji){
+  const box = document.getElementById("response-q" + qNum);
+  box.style.display = "block";
+
+  box.innerHTML = `
+    <b>Pilihanmu:</b> ${choiceText}<br>
+    <b>Pesan:</b> ${replyText}<br>
+    <button class="followup-btn" onclick="triggerParticleBurst(event, '${emoji}')">
+      ${btnText}
+    </button>
+  `;
+}
+
+/* MODAL CONTROL */
+function toggleModal(show){
+  const modal = document.getElementById("secretModal");
+  if(show) modal.classList.add("active");
+  else modal.classList.remove("active");
+}
+
+/* BINTANG & BUNGA MELAYANG DI BACKGROUND */
+function createFloatingStars(){
+  setInterval(() => {
+    const star = document.createElement("div");
+    star.className = "float-star";
+    star.innerHTML = ["✨", "🌿", "🌸", "💫", "⭐", "🌻"][Math.floor(Math.random() * 6)];
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.bottom = "-20px";
+    star.style.fontSize = (Math.random() * 14 + 12) + "px";
+    star.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(star);
+
+    setTimeout(() => {
+      star.remove();
+    }, 5000);
+  }, 400);
+}
+
+/* LEDAKAN EMOJI / PARTIKEL SAAT TOMBOL DIKLIK */
+function triggerParticleBurst(e, emoji = "✨"){
+  const count = 18;
+  const startX = (e && e.clientX) ? e.clientX : window.innerWidth / 2;
+  const startY = (e && e.clientY) ? e.clientY : window.innerHeight / 2;
+
+  for(let i = 0; i < count; i++){
+    const p = document.createElement("div");
+    p.className = "burst-particle";
+    p.innerHTML = emoji;
+    p.style.left = startX + "px";
+    p.style.top = startY + "px";
+
+    const angle = (i / count) * 360 * (Math.PI / 180);
+    const distance = Math.random() * 180 + 80;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance;
+
+    p.style.setProperty("--dx", `${dx}px`);
+    p.style.setProperty("--dy", `${dy}px`);
+
+    document.body.appendChild(p);
+
+    setTimeout(() => {
+      p.remove();
+    }, 2000);
+  }
+}
+
+</script>
+</body>
+</html>
